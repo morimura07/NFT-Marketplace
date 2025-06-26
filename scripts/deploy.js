@@ -3,8 +3,6 @@ const hre = require("hardhat");
 
 async function main() {
 
-  // We get the contract to deploy
-
   const NFTMarket = await hre.ethers.getContractFactory("NFTMarket");
   const NFTMarketContract = await NFTMarket.deploy();
 
@@ -18,8 +16,6 @@ async function main() {
   console.log("NFTContract deployed to:", NFTContract.address);
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main()
   .then(() => process.exit(0))
   .catch((error) => {
